@@ -385,7 +385,9 @@ function openGiftModal(key){
 
 
   giftModal.classList.remove("hidden");
-  giftModal.setAttribute("aria-hidden","false");
+giftModal.setAttribute("aria-hidden","false");
+
+document.body.style.overflow = "hidden";
 
 }
 
@@ -393,8 +395,10 @@ function openGiftModal(key){
 
 function closeGiftModal(){
 
-  giftModal.classList.add("hidden");
-  giftModal.setAttribute("aria-hidden","true");
+    giftModal.classList.add("hidden");
+    giftModal.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow = "";
 
 }
 
