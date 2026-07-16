@@ -629,19 +629,23 @@ setInterval(
 
 
 /* GALLERY VIEWER */
-document.querySelectorAll(".photo-card").forEach(card=>{
+document.querySelectorAll(".photo-card").forEach(card => {
 
-    card.addEventListener("click",()=>{
+    card.addEventListener("click", function(e){
 
-        document.querySelectorAll(".photo-card").forEach(item=>{
+        e.preventDefault();
+        e.stopPropagation();
 
-            if(item!==card){
+        if(this.classList.contains("active")){
+            this.classList.remove("active");
+        }else{
+
+            document.querySelectorAll(".photo-card").forEach(item=>{
                 item.classList.remove("active");
-            }
+            });
 
-        });
-
-        card.classList.toggle("active");
+            this.classList.add("active");
+        }
 
     });
 
