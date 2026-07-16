@@ -1266,13 +1266,29 @@ h1,h2,h3{
 }
 @media (max-width:768px){
 
+    .photo-card{
+        position:relative;
+    }
+
     .photo-card figcaption{
-        position:static;
-        transform:none;
-        opacity:1;
-        margin-top:10px;
+        position:absolute;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        padding:12px 14px;
         border-radius:14px;
-        background:rgba(71,18,43,.82);
+        background:linear-gradient(180deg,rgba(71,18,43,.05),rgba(71,18,43,.82));
+        color:#fff;
+        line-height:1.6;
+
+        transform:translateY(120%);
+        opacity:0;
+        transition:.3s;
+    }
+
+    .photo-card.active figcaption{
+        transform:translateY(0);
+        opacity:1;
     }
 
 }
