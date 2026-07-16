@@ -744,12 +744,17 @@ h1,h2,h3{
   opacity:1;
 }
 
-@media (hover:none){
+.photo-card{
+    cursor:pointer;
+}
 
-  .photo-card:hover figcaption{
-    transform:translateY(120%);
-    opacity:0;
-  }
+.photo-card figcaption{
+    pointer-events:none;
+}
+
+.photo-card.active figcaption{
+    transform:translateY(0);
+    opacity:1;
 }
 /* GALLERY VIEWER */
 
