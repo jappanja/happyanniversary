@@ -239,24 +239,49 @@ font-weight:900;
 }
 
 
-@media(max-width:600px){
+@media (max-width:600px){
 
 .wheel{
-width:280px;
-height:280px;
+    width:280px;
+    height:280px;
+}
+
+.wheel-center{
+    width:64px;
+    height:64px;
+    font-size:28px;
 }
 
 .wheel-segment{
-font-size:11px;
+    width:70px;
+    height:24px;
+    margin-left:-35px;
+    margin-top:-12px;
+    font-size:11px;
 }
 
-.wheel-segment:nth-of-type(1),
-.wheel-segment:nth-of-type(2),
-.wheel-segment:nth-of-type(3),
-.wheel-segment:nth-of-type(4),
-.wheel-segment:nth-of-type(5),
+.wheel-segment:nth-of-type(1){
+    transform:rotate(30deg) translateY(-105px) rotate(-30deg);
+}
+
+.wheel-segment:nth-of-type(2){
+    transform:rotate(90deg) translateY(-105px) rotate(-90deg);
+}
+
+.wheel-segment:nth-of-type(3){
+    transform:rotate(150deg) translateY(-105px) rotate(-150deg);
+}
+
+.wheel-segment:nth-of-type(4){
+    transform:rotate(210deg) translateY(-105px) rotate(-210deg);
+}
+
+.wheel-segment:nth-of-type(5){
+    transform:rotate(270deg) translateY(-105px) rotate(-270deg);
+}
+
 .wheel-segment:nth-of-type(6){
-transform:scale(.8);
+    transform:rotate(330deg) translateY(-105px) rotate(-330deg);
 }
 
 }
