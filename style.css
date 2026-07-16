@@ -515,11 +515,15 @@ h1,h2,h3{
   position:fixed;
   inset:0;
   z-index:100;
-  display:grid;
-  place-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding:20px;
   background:rgba(71,18,43,.55);
   backdrop-filter:blur(10px);
+
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .gift-modal.hidden{
@@ -532,6 +536,9 @@ h1,h2,h3{
   border-radius:30px;
   background:linear-gradient(165deg,rgba(255,255,255,.88),rgba(255,240,247,.96));
   animation:modalReveal .45s ease;
+
+  max-height:90vh;
+  overflow-y:auto;
 }
 
 .gift-modal-content{
@@ -1290,5 +1297,18 @@ h1,h2,h3{
         transform:translateY(0);
         opacity:1;
     }
+
+}
+@media (max-width:768px){
+
+  .gift-modal{
+    align-items:flex-start;
+    padding:20px 12px;
+  }
+
+  .gift-modal-card{
+    margin:20px 0;
+    max-height:none;
+  }
 
 }
