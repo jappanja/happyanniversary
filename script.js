@@ -629,141 +629,46 @@ setInterval(
 
 
 /* GALLERY VIEWER */
+/* GALLERY POPUP */
 
-const galleryViewer=
-document.getElementById("galleryViewer");
+const galleryViewer = document.getElementById("galleryViewer");
+const galleryText = document.getElementById("galleryText");
+const galleryClose = document.getElementById("galleryClose");
 
-const galleryImage=
-document.getElementById("galleryImage");
+function closeGallery() {
 
-const galleryClose=
-document.getElementById("galleryClose");
-
-const galleryPrev=
-document.getElementById("galleryPrev");
-
-const galleryNext=
-document.getElementById("galleryNext");
-
-
-const galleryImages=[
-  "bahan/1.jpeg",
-  "bahan/2.jpeg",
-  "bahan/3.jpeg",
-  "bahan/4.jpeg",
-  "bahan/5.jpeg",
-  "bahan/6.jpeg",
-  "bahan/7.jpeg",
-  "bahan/8.jpeg"
-];
-
-
-let galleryIndex=0;
-
-
-
-function openGallery(index){
-
-  if(!galleryViewer) return;
-
-
-  galleryIndex=index;
-
-  galleryImage.src=
-  galleryImages[galleryIndex];
-
-
-  galleryViewer.classList.remove(
-    "hidden"
-  );
+    galleryViewer.classList.add("hidden");
 
 }
 
+document.querySelectorAll(".photo-card").forEach(card => {
 
+    card.addEventListener("click", () => {
 
-function closeGallery(){
+        const caption = card.querySelector("figcaption").textContent.trim();
 
-  galleryViewer.classList.add(
-    "hidden"
-  );
+        galleryText.textContent = caption;
 
-}
+        galleryViewer.classList.remove("hidden");
 
-
-
-if(galleryClose){
-
-  galleryClose.addEventListener(
-    "click",
-    closeGallery
-  );
-
-}
-
-
-
-if(galleryNext){
-
-  galleryNext.addEventListener(
-    "click",
-    ()=>{
-
-      galleryIndex++;
-
-      if(
-        galleryIndex>=galleryImages.length
-      ){
-        galleryIndex=0;
-      }
-
-
-      galleryImage.src=
-      galleryImages[galleryIndex];
-
-    }
-  );
-
-}
-
-
-
-if(galleryPrev){
-
-  galleryPrev.addEventListener(
-    "click",
-    ()=>{
-
-      galleryIndex--;
-
-      if(
-        galleryIndex<0
-      ){
-        galleryIndex=
-        galleryImages.length-1;
-      }
-
-
-      galleryImage.src=
-      galleryImages[galleryIndex];
-
-    }
-  );
-
-}
-
-
-
-document
-.querySelectorAll(".photo-card img")
-.forEach((img,index)=>{
-
-  img.addEventListener(
-    "click",
-    ()=>{
-
-      openGallery(index);
-
-    }
-  );
+    });
 
 });
+
+if (galleryClose) {
+
+    galleryClose.addEventListener("click", closeGallery);
+
+}
+
+if (galleryViewer) {
+
+    galleryViewer.addEventListener("click", (e) => {
+
+        if (e.target === galleryViewer) {
+            closeGallery();
+        }
+
+    });
+
+}
