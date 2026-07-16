@@ -448,7 +448,7 @@ return "cmn bener 15 ga sayang fix";
 }
 
 if(score===16){
-return "hmm sayang beneran ga sayang sm aku? ";
+return "hmm, beneran ga sih sayang sm aku?";
 }
 
 if(score===17){
