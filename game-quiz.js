@@ -464,7 +464,7 @@ return "buset salah 1, keren bub i love youuuu";
 }
 
 if(score===20){
-return "ANJAYY BENER SEMUA HAHAHAH, i love you sayang akuuuu. makasih udah perhatian dan tau semual hal tentang aku ya cayangg";
+return "ANJAYY BENER SEMUA HAHAHAH, i love you sayang akuuuu. makasih udah perhatian dan tau semua hal tentang aku ya cayangg. aku sayang banget sama kamu. hepi enip";
 }
 
 }
