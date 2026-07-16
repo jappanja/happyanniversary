@@ -629,46 +629,20 @@ setInterval(
 
 
 /* GALLERY VIEWER */
-/* GALLERY POPUP */
+document.querySelectorAll(".photo-card").forEach(card=>{
 
-const galleryViewer = document.getElementById("galleryViewer");
-const galleryText = document.getElementById("galleryText");
-const galleryClose = document.getElementById("galleryClose");
+    card.addEventListener("click",()=>{
 
-function closeGallery() {
+        document.querySelectorAll(".photo-card").forEach(item=>{
 
-    galleryViewer.classList.add("hidden");
+            if(item!==card){
+                item.classList.remove("active");
+            }
 
-}
+        });
 
-document.querySelectorAll(".photo-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        const caption = card.querySelector("figcaption").textContent.trim();
-
-        galleryText.textContent = caption;
-
-        galleryViewer.classList.remove("hidden");
+        card.classList.toggle("active");
 
     });
 
 });
-
-if (galleryClose) {
-
-    galleryClose.addEventListener("click", closeGallery);
-
-}
-
-if (galleryViewer) {
-
-    galleryViewer.addEventListener("click", (e) => {
-
-        if (e.target === galleryViewer) {
-            closeGallery();
-        }
-
-    });
-
-}
