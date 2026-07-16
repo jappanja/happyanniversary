@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Anniversary for You</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-blobs">
+  <div class="flower-container"></div>
+  <div class="sparkle-container"></div>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="loginScreen" class="login-screen">
+
+  <div class="glass-card login-card">
+
+    <div class="logo-badge">❤</div>
+
+    <p class="eyebrow center">
+      for the one i keep choosing
+    </p>
+
+    <form id="loginForm">
+
+      <div class="number-grid">
+
+        <button type="button" class="number-btn" data-value="1">1</button>
+        <button type="button" class="number-btn" data-value="2">2</button>
+        <button type="button" class="number-btn" data-value="3">3</button>
+
+        <button type="button" class="number-btn" data-value="4">4</button>
+        <button type="button" class="number-btn" data-value="5">5</button>
+        <button type="button" class="number-btn" data-value="6">6</button>
+
+        <button type="button" class="number-btn" data-value="7">7</button>
+        <button type="button" class="number-btn" data-value="8">8</button>
+        <button type="button" class="number-btn" data-value="9">9</button>
+
+        <button type="button" class="number-btn clear-btn" data-action="clear">C</button>
+        <button type="button" class="number-btn" data-value="0">0</button>
+        <button type="submit" class="number-btn submit-btn">masuk</button>
+
+      </div>
+
+      <input type="hidden" id="passwordInput">
+
+    </form>
+
+    <small class="hint">
+      hint: <strong>password hpku</strong>
+    </small>
+
+    <div class="code-display" id="codeDisplay">
+      _ _ _ _
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- OPENING LETTER -->
+
+<div id="introScreen" class="intro-screen hidden">
+
+  <div class="intro-content">
+
+    <div id="envelope" class="envelope">
+
+      <div class="envelope-top"></div>
+      <div class="envelope-body"></div>
+
+      <div class="letter-paper">
+
+        <p class="eyebrow">
+          one more thing...
+        </p>
+
+        <h2>
+          before you enter
+        </h2>
+
+        <p>
+          i made this little place with all the love i have.
+          before everything starts, there's one small letter waiting for you.
+        </p>
+
+        <button id="openLetterBtn" class="letter-open-btn">
+          open the letter
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- MAIN -->
+
+<div id="appScreen" class="app-screen hidden">
+
+  <audio id="bgAudio" loop preload="auto">
+    <source src="bahan/Backstreet Boys - Shape Of My Heart Official HD Video.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- NAVBAR -->
+
+  <nav class="top-nav glass-card">
+
+    <a href="#surface">surface</a>
+    <a href="#our-memories">our memories</a>
+    <a href="#gallery">gallery</a>
+    <a href="#the-letter">the letter</a>
+    <a href="#wishes">wishes</a>
+    <a href="game.html">game</a>
+    <a href="#" id="logoutButton">logout</a>
+
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section id="surface" class="surface-section">
+
+    <div class="surface-copy glass-card reveal">
+
+      <p class="eyebrow">
+        happy anniversary, my love
+      </p>
+
+      <h2>
+        Happy Anniversary
+        <span>Amanda</span>
+      </h2>
+
+      <p class="subtitle">
+        makasih ya udah milih buat tetap ada di hidup aku.
+        hari ini, aku cuma mau kamu tau kalau kamu udah jadi
+        the best part of my heart forever.
+        makasih atas satu tahun yang udah kamu jalanin sama aku gendut.
+      </p>
+
+      <div class="hero-actions">
+
+        <span class="mini-pill">
+          shape of my heart
+        </span>
+
+        <a class="story-link" href="#our-memories">
+          our memories →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="surface-note glass-card reveal">
+
+      <span class="quote-mark">
+        “
+      </span>
+
+      <p>
+        aku ga cuma berharap semua hal baik itu dateng terus,
+        aku juga pengen kamu tau ada satu orang yang tetep sama kamu
+        disaat kamu terpuruk atau lagi seneng,
+        dengan segala cara yang bikin kamu senyum dan nangis.
+      </p>
+
+      <strong id="welcomeName">
+        i love you, amanda
+      </strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- GIFTS -->
+
+  <section class="gift-showcase reveal">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        a little surprise for you
+      </p>
+
+      <h3>
+        Five small gifts, one heartfelt message
+      </h3>
+
+    </div>
+
+
+    <div class="gift-grid">
+
+      <button class="gift-card" data-gift="flower">
+        <span class="gift-emoji">🌹</span>
+        <span>flower</span>
+        <small>for the softest part of our days</small>
+      </button>
+
+
+      <button class="gift-card" data-gift="doll">
+        <span class="gift-emoji">🐓</span>
+        <span>doll</span>
+        <small>for the comfort you always bring</small>
+      </button>
+
+
+      <button class="gift-card" data-gift="cup">
+        <span class="gift-emoji">☕</span>
+        <span>cup</span>
+        <small>for the slow, simple moments</small>
+      </button>
+
+
+      <button class="gift-card" data-gift="hirono">
+        <span class="gift-emoji">🎀</span>
+        <span>hirono</span>
+        <small>for the little things that stay</small>
+      </button>
+
+
+      <button class="gift-card" data-gift="web">
+        <span class="gift-emoji">🌐</span>
+        <span>web</span>
+        <small>for the effort behind this page</small>
+      </button>
+
+    </div>
+
+  </section>
+    <!-- MEMORIES -->
+
+  <section id="our-memories" class="story-section reveal">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        chapters from our story
+      </p>
+
+      <h3>
+        A Trace of Us
+      </h3>
+
+    </div>
+
+
+    <div class="timeline-list">
+
+
+      <article class="timeline-item">
+
+        <span class="timeline-number">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            17-07-2025
+          </h4>
+
+          <p>
+            tepat hari itu, kita memulai hubungan.
+            gatau dulu kita sering malu malu ya?
+            big thanks to u, karena udah buka blokir
+            dan akhirnya kita sampai sejauh ini.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="timeline-item">
+
+        <span class="timeline-number">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            our argument
+          </h4>
+
+          <p>
+            setiap kita berantem,
+            setiap ucapan yang keluar dari mulut kita,
+            entah apapun,
+            aku tau itu jauh dari kata benar.
+
+            kita selalu berargumen,
+            tapi tetep aja itu
+            yang bikin kita makin deket
+            satu sama lain kan?
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="timeline-item">
+
+        <span class="timeline-number">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            17-07-2026
+          </h4>
+
+          <p>
+            dan sampai hari ini,
+            kita jalanin hubungan selama satu tahun.
+
+            bangkit dari kesalahan,
+            belajar dari pengalaman,
+            dan tetep jadi "kita".
+
+            i don't even know how to express
+            how much i love you.
+
+            all i want you to know is that
+            i love you so much.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- GALLERY -->
+
+
+  <section id="gallery" class="gallery-section reveal">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        a few of my favorite shots of you
+      </p>
+
+      <h3>
+        My Favorite Frames of You
+      </h3>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+      <figure class="photo-card">
+        <img src="bahan/1.jpeg" alt="foto 1">
+
+        <figcaption>
+          ini foto pas kamu bingung pilih outfit ya..
+          kamu selalu cantik, sayang.
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/2.jpeg" alt="foto 2">
+
+        <figcaption>
+          kamu cantik banget disini,
+          kalau kamu pake bulu ini lagi, tolong inget aku ya.
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/3.jpeg" alt="foto 3">
+
+        <figcaption>
+          lucu banget kamu senyum kayak kelinci,
+          kurangin pake sexy sexy wuuu.
+          kamu punyaku
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/4.jpeg" alt="foto 4">
+
+        <figcaption>
+          cantik banget sayang,
+          nanti tatap aku kayak gini ya
+          kalo kita udah ketemu.
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/5.jpeg" alt="foto 5">
+
+        <figcaption>
+          kamu cantik pake kacamata apa aja sayang,
+          aku masih gapercaya kamu pacarku huhu :(
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/6.jpeg" alt="foto 6">
+
+        <figcaption>
+          aku pengen kita selfie berdua
+          terus kamu cium cium aku.
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/7.jpeg" alt="foto 7">
+
+        <figcaption>
+          bidadari pun kalah sama kamu sayang.
+        </figcaption>
+      </figure>
+
+
+      <figure class="photo-card">
+        <img src="bahan/8.jpeg" alt="foto 8">
+
+        <figcaption>
+          sexy banget sayang, cantik. kapan ya ciuman?
+        </figcaption>
+      </figure>
+
+
+    </div>
+
+  </section>
+    <!-- THE LETTER -->
+
+  <section id="the-letter" class="letter-section reveal">
+
+    <div class="letter-card glass-card">
+
+      <p class="eyebrow">
+        open when found
+      </p>
+
+      <button id="letterTrigger" class="letter-trigger" type="button">
+        Open the little note
+      </button>
+
+      <div id="typedLetter" class="typed-letter" aria-live="polite"></div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- WISHES -->
+
+  <section id="wishes" class="wishes-section reveal">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        wishes for the year ahead
+      </p>
+
+      <h3>
+        Prayers for What's Ahead
+      </h3>
+
+    </div>
+
+
+    <div class="wishes-grid">
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          us
+        </h4>
+
+        <p>
+          semoga kita setiap abis berantem selalu dikasih jalan keluar ya sayang? 
+          semoga kita selalu bisa saling ngerti dan ngga pernah milih buat nyerah satu sama lain. i love you
+        </p>
+
+      </article>
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          always
+        </h4>
+
+        <p>
+          semoga apapun yang terjadi nanti, 
+          kita tetap jadi tempat ternyaman satu sama lain dan selalu milih buat bersama
+        </p>
+
+      </article>
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          our future
+        </h4>
+
+        <p>
+          semoga kedepannya kita selalu diberi kebahagiaan, dipermudah dalam setiap langkah, 
+          dan selalu punya alasan untuk tetep bersama. i hope we grow together
+        </p>
+
+      </article>
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          thank you
+        </h4>
+
+        <p>
+          terima kasih udah hadir dan jadi bagian terbaik dalam hidup aku, 
+          semoga aku juga bisa terus menjadi seseorang yang buat kamu bahagia dan ga merasa sendirian
+        </p>
+
+      </article>
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          our love
+        </h4>
+
+        <p>
+          semoga rasa sayang kita selalu tumbuh tiap hari, 
+          semoga kita ngga pernah lupa alasan kenapa kita memilih satu sama lain.
+        </p>
+
+      </article>
+
+
+      <article class="wish-card glass-card">
+
+        <h4>
+          anniversary
+        </h4>
+
+        <p>
+          semoga hari ini bukan cuma tentang bertambahnya waktu, 
+          tapi tentang gimana kita terus belajar mencintai dan menjaga satu sama lain
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer-signoff reveal">
+
+    <div class="glass-card footer-card">
+
+      <p class="eyebrow">
+        happy anniversary, babe
+      </p>
+
+      <h3>
+        thank you for still being my home, the one i always wanna come back to.
+      </h3>
+
+    </div>
+
+  </footer>
+
+
+</div>
+
+
+
+<!-- FLOATING HEART -->
+
+<div class="floating-hearts"></div>
+
+
+
+<!-- GIFT MODAL -->
+
+<div id="giftModal" class="gift-modal hidden" aria-hidden="true">
+
+  <div class="gift-modal-card glass-card">
+
+    <button id="giftBackButton" class="back-link" type="button">
+      ← kembali
+    </button>
+
+
+    <div class="gift-modal-content">
+
+
+      <div class="gift-modal-head">
+
+        <div id="giftModalEmoji" class="gift-modal-emoji">
+          🌹
+        </div>
+
+
+        <div>
+
+          <p class="eyebrow">
+            a little surprise
+          </p>
+
+          <h3 id="giftModalTitle">
+            flower
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <p id="giftModalMessage" class="gift-modal-message"></p>
+
+
+      <div id="giftModalPhotoGrid" class="gift-photo-grid"></div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- GALLERY VIEWER -->
+
+<div id="galleryViewer" class="gallery-viewer hidden">
+
+  <button id="galleryClose">
+    ✕
+  </button>
+
+  <button id="galleryPrev">
+    ❮
+  </button>
+
+  <img id="galleryImage" src="" alt="gallery">
+
+  <button id="galleryNext">
+    ❯
+  </button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+min-height:100vh;
+font-family:'Manrope',sans-serif;
+color:#5d203d;
+background:
+radial-gradient(circle at top left,rgba(255,126,180,.45),transparent 25%),
+radial-gradient(circle at 85% 20%,rgba(255,210,230,.8),transparent 25%),
+linear-gradient(135deg,#fff8fc,#ffe5f1,#fff8fc);
+
+display:flex;
+justify-content:center;
+padding:30px 18px 60px;
+}
+
+
+.game-shell{
+width:100%;
+max-width:980px;
+display:grid;
+gap:24px;
+}
+
+
+.glass-card{
+background:rgba(255,255,255,.65);
+border:1px solid rgba(255,255,255,.8);
+backdrop-filter:blur(16px);
+box-shadow:0 18px 60px rgba(255,79,149,.18);
+}
+
+
+.game-hero{
+padding:35px;
+border-radius:30px;
+text-align:center;
+}
+
+
+.eyebrow{
+font-size:12px;
+letter-spacing:3px;
+text-transform:uppercase;
+font-weight:800;
+color:#a45172;
+}
+
+
+.game-hero h1{
+margin:10px 0;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(3rem,7vw,5rem);
+color:#5d203d;
+}
+
+
+.game-subtitle{
+font-size:15px;
+color:#7c4860;
+line-height:1.8;
+}
+
+
+.game-meta{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:20px;
+}
+
+
+.meta-chip{
+padding:12px 18px;
+border-radius:999px;
+background:#fff;
+color:#7b3454;
+font-weight:800;
+box-shadow:0 10px 25px rgba(93,32,61,.1);
+}
+
+
+
+.game-card{
+padding:30px;
+border-radius:30px;
+}
+
+
+.game-topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+
+.back-link{
+padding:10px 18px;
+border-radius:50px;
+text-decoration:none;
+color:#7b3454;
+font-weight:700;
+font-size:14px;
+background:rgba(255,255,255,.6);
+border:1px solid rgba(255,255,255,.8);
+box-shadow:0 8px 20px rgba(93,32,61,.1);
+transition:.3s;
+}
+
+
+.back-link:hover{
+background:#ffd7e4;
+transform:translateY(-2px);
+}
+
+
+
+.letter-trigger{
+padding:12px 18px;
+border-radius:999px;
+background:linear-gradient(135deg,#ff78ad,#ff4f95);
+color:white;
+font-weight:800;
+border:none;
+cursor:pointer;
+font-size:15px;
+box-shadow:0 12px 28px rgba(255,79,149,.25);
+}
+
+
+
+.letter-trigger:hover{
+transform:translateY(-2px);
+}
+
+
+
+.bubble-field{
+height:380px;
+position:relative;
+overflow:hidden;
+border-radius:25px;
+background:rgba(255,255,255,.45);
+}
+
+
+.bubble{
+position:absolute;
+border:none;
+border-radius:50%;
+background:linear-gradient(135deg,#ff9fc6,#ff4f95);
+color:white;
+font-size:25px;
+font-weight:800;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(255,79,149,.35);
+animation:float .8s ease infinite alternate;
+}
+
+
+.bubble:hover{
+transform:scale(1.15);
+}
+
+
+.bubble.pop{
+animation:pop .15s ease forwards;
+}
+
+
+.game-message{
+margin-top:20px;
+padding:15px;
+text-align:center;
+border-radius:20px;
+background:rgba(255,255,255,.75);
+font-weight:800;
+color:#7e3558;
+}
+
+
+@keyframes float{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-8px);
+}
+}
+
+
+@keyframes pop{
+to{
+transform:scale(1.5);
+opacity:0;
+}
+}
+
+
+@media(max-width:600px){
+
+.game-topbar{
+flex-direction:column;
+gap:15px;
+}
+
+.back-link,
+.letter-trigger{
+width:100%;
+text-align:center;
+}
+
+.bubble-field{
+height:300px;
+}
+
+}
+.love-popup{
+position:fixed;
+transform:translate(-50%,-120%);
+padding:8px 15px;
+border-radius:30px;
+background:linear-gradient(135deg,#ff78ad,#ff4f95);
+color:white;
+font-size:12px;
+font-weight:800;
+white-space:nowrap;
+box-shadow:0 8px 20px rgba(255,79,149,.25);
+z-index:999;
+animation:loveShow .25s ease;
+}
+
+.love-popup.hide{
+opacity:0;
+transform:translate(-50%,-150%);
+transition:.3s;
+}
+
+@keyframes loveShow{
+from{
+opacity:0;
+transform:translate(-50%,-80%) scale(.8);
+}
+
+to{
+opacity:1;
+transform:translate(-50%,-120%) scale(1);
+}
+}
+/* FALLING EFFECT GLOBAL */
+
+.falling-effect-container{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+z-index:9999;
+}
+
+
+.falling-item{
+position:absolute;
+top:-60px;
+pointer-events:none;
+animation:falling linear forwards;
+filter:drop-shadow(0 5px 10px rgba(255,79,149,.25));
+}
+
+
+@keyframes falling{
+
+0%{
+transform:translateY(-60px) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}

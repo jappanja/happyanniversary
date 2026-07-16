@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Match</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-memory.css">
+</head>
+<body class="page-body game-page-body memory-page">
+<div id="winPopup" class="win-popup">
+    <div class="win-box">
+        <p id="winText"></p>
+        <button onclick="closeWinPopup()">
+            Continue 💗
+        </button>
+    </div>
+</div>
+
+
+<audio id="gameAudio" loop preload="auto">
+
+    <source src="bahan/Backstreet Boys - Shape Of My Heart Official HD Video.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<main class="game-shell">
+
+
+<section class="game-hero glass-card reveal">
+
+    <p class="eyebrow">
+        memory world
+    </p>
+
+
+    <h1>
+        Memory Match
+    </h1>
+
+
+    <p class="game-subtitle">
+        Match every pair before the timer runs out.
+    </p>
+
+
+    <div class="game-meta">
+
+
+        <div class="meta-chip">
+            Pairs :
+            <strong id="pairCount">
+                0 / 8
+            </strong>
+        </div>
+
+
+        <div class="meta-chip">
+            Moves :
+            <strong id="moveCount">
+                0
+            </strong>
+        </div>
+
+
+        <div class="meta-chip">
+            Time :
+            <strong id="timeCount">
+                02:00
+            </strong>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<section class="game-card glass-card reveal">
+
+
+<div class="game-topbar">
+
+
+<a class="back-link" href="game.html">
+    ← Choose Another Game
+</a>
+
+
+
+<button id="restartGame" class="letter-trigger" type="button">
+
+    Restart
+
+</button>
+
+
+</div>
+
+
+
+<div id="memoryGrid" class="memory-grid"></div>
+
+
+
+<div id="gameMessage" class="game-message">
+
+    Find all matching cards!
+
+</div>
+
+
+
+</section>
+
+
+</main>
+
+
+
+<script src="game-memory.js"></script>
+<script src="falling-effect.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Jump</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-dino.css">
+</head>
+
+<body class="page-body game-page-body">
+<div class="flower-container"></div>
+<div class="floating-hearts"></div>
+<audio id="gameAudio" loop preload="auto">
+    <source src="bahan/Backstreet Boys - Shape Of My Heart Official HD Video.mp3" type="audio/mpeg">
+</audio>
+<main class="game-shell">
+
+        <section class="game-hero glass-card reveal">
+
+            <p class="eyebrow">dino challenge</p>
+
+            <h1>Dino Jump</h1>
+
+            <p class="game-subtitle">
+                Jump over every tree. The longer you survive, the higher your score.
+            </p>
+
+            <div class="game-meta">
+
+                <div class="meta-chip">
+                    Score :
+                    <strong id="dinoScore">0</strong>
+                </div>
+
+                <div class="meta-chip">
+                    Status :
+                    <strong id="dinoStatus">Ready</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="game-card glass-card reveal">
+
+            <div class="game-topbar">
+
+    <a href="game.html" class="back-link">
+        ← Choose Another Game
+    </a>
+
+    <div class="game-buttons">
+
+    <button
+        id="startDino"
+        class="letter-trigger"
+        type="button">
+        Start Game
+    </button>
+
+
+
+
+</div>
+
+</div>
+
+            <div id="dinoStage" class="dino-stage">
+
+                <div class="sky"></div>
+
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+
+                <div id="dinoRunner" class="dino-runner">
+                    🏃
+                </div>
+
+                <div id="dinoTree" class="dino-tree">
+                    🌲
+                </div>
+
+                <div class="ground"></div>
+
+            </div>
+
+            <div class="game-message">
+                Click the stage or press <strong>SPACE</strong> to jump.
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="game-dino.js"></script>
+
+<script src="falling-effect.js"></script>
+<script src="game-dino.js"></script>
+
+</body>
+</html>

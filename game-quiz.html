@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Quiz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-quiz.css">
+</head>
+
+<body class="page-body game-page-body">
+
+<div class="flower-container"></div>
+<div class="floating-hearts"></div>
+
+<audio id="gameAudio" loop preload="auto">
+    <source src="bahan/just the way you are (slowed reverb + lyrics).mp3" type="audio/mpeg">
+</audio>
+
+
+<main class="game-wrapper">
+
+<section class="hero-card">
+
+<p class="eyebrow">
+soft little challenge
+</p>
+
+<h1>
+Love Quiz
+</h1>
+
+<p class="subtitle">
+answer the tiny questions and see how well the feeling is understood.
+</p>
+
+<div class="score-box" id="progressBox">
+    Question :
+    <strong id="quizProgress">1 / 20</strong>
+</div>
+
+<div class="score-box" id="finalScoreBox" style="display:none;">
+    Score :
+    <strong id="quizScore">0</strong>
+</div>
+
+</section>
+
+
+<section class="quiz-container">
+
+<div class="top-bar">
+
+<a href="game.html" class="back-link">
+← choose another game
+</a>
+
+</div>
+
+
+<div class="quiz-card">
+
+<h2 id="quizQuestion"></h2>
+
+<div id="quizOptions" class="options"></div>
+
+<p id="quizMessage">
+answer to begin
+</p>
+
+<button id="restartBtn">
+play again
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script src="falling-effect.js"></script>
+<script src="game-quiz.js"></script>
+
+</body>
+</html>

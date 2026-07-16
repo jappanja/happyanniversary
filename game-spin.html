@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Spin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-spin.css">
+</head>
+
+<body class="page-body game-page-body">
+
+<div class="flower-container"></div>
+<div class="floating-hearts"></div>
+
+<div id="resultPopup" class="popup">
+    <div class="popup-card">
+        <h2 id="popupTitle"></h2>
+        <p id="popupText"></p>
+        <button id="closePopup">Close</button>
+    </div>
+</div>
+
+<audio id="gameAudio" loop preload="auto">
+    <source src="bahan/LANY - You!.mp3" type="audio/mpeg">
+</audio>
+
+<main class="game-shell">
+
+<section class="game-hero glass-card reveal">
+
+<p class="eyebrow">
+little fortune
+</p>
+
+<h1>
+Love Spin
+</h1>
+
+<p class="game-subtitle">
+Spin the wheel and see your little surprise.
+</p>
+
+<div class="game-meta">
+
+<div class="meta-chip">
+Result :
+<strong id="spinResult">Ready</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="game-card glass-card reveal">
+
+<div class="game-topbar">
+
+<a class="back-link" href="game.html">
+← Choose Another Game
+</a>
+
+<button id="spinButton" class="letter-trigger" type="button">
+Spin Wheel
+</button>
+
+</div>
+
+
+<div class="wheel-area">
+
+<div class="pointer">
+▼
+</div>
+
+<div id="wheel" class="wheel">
+
+<div class="wheel-center">
+❤
+</div>
+
+<span class="wheel-segment">kesel</span>
+<span class="wheel-segment">emosi</span>
+<span class="wheel-segment">pukul</span>
+<span class="wheel-segment">nangis</span>
+<span class="wheel-segment">berantem</span>
+<span class="wheel-segment">sendirian</span>
+
+</div>
+
+</div>
+
+
+<div id="spinMessage" class="game-message">
+Spin the wheel for a surprise 💕
+</div>
+
+
+</section>
+
+</main>
+
+
+<script src="falling-effect.js"></script>
+<script src="game-spin.js"></script>
+
+</body>
+</html>

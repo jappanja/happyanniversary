@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bubble Pop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-bubble.css">
+</head>
+
+
+<body class="page-body game-page-body">
+<audio id="gameAudio" loop preload="auto">
+    <source src="bahan/The night we met.mp3" type="audio/mpeg">
+</audio>
+
+
+<main class="game-shell">
+
+
+<section class="game-hero glass-card">
+
+<p class="eyebrow">
+airy little challenge
+</p>
+
+<h1>
+Bubble Pop
+</h1>
+
+<p class="game-subtitle">
+Pop as many bubbles as you can before the clock ends.
+</p>
+
+
+<div class="game-meta">
+
+<div class="meta-chip">
+Score :
+<strong id="bubbleScore">0</strong>
+</div>
+
+<div class="meta-chip">
+Time :
+<strong id="bubbleTime">15</strong>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="game-card glass-card">
+
+
+<div class="game-topbar">
+
+<a href="game.html" class="back-link">
+← Choose Another Game
+</a>
+
+
+<button id="startBubble" class="letter-trigger">
+Start Game
+</button>
+
+</div>
+
+
+
+<div id="bubbleField" class="bubble-field"></div>
+
+
+
+<div id="bubbleMessage" class="game-message">
+Click start and pop the bubbles!
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<script src="falling-effect.js"></script>
+<script src="game-bubble.js"></script>
+
+</body>
+</html>

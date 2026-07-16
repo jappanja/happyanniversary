@@ -1,0 +1,367 @@
+body.game-page-body{
+min-height:100vh;
+margin:0;
+padding:30px 18px 60px;
+font-family:'Manrope',sans-serif;
+color:#5d203d;
+background:radial-gradient(circle at top left,rgba(255,126,180,.45),transparent 25%),radial-gradient(circle at 85% 20%,rgba(255,210,230,.8),transparent 25%),linear-gradient(135deg,#fff8fc,#ffe5f1,#fff8fc);
+}
+
+.game-shell{
+max-width:980px;
+margin:auto;
+display:grid;
+gap:24px;
+}
+
+.glass-card{
+background:rgba(255,255,255,.65);
+border:1px solid rgba(255,255,255,.8);
+backdrop-filter:blur(16px);
+box-shadow:0 18px 60px rgba(255,79,149,.18);
+}
+
+.game-hero{
+padding:35px;
+border-radius:30px;
+text-align:center;
+}
+
+.eyebrow{
+font-family:'Manrope',sans-serif;
+font-size:12px;
+letter-spacing:3px;
+text-transform:uppercase;
+font-weight:800;
+color:#a45172;
+}
+
+.game-hero h1{
+margin:10px 0;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(3rem,7vw,5rem);
+font-weight:700;
+color:#5d203d;
+}
+
+.game-subtitle{
+font-size:15px;
+color:#7c4860;
+line-height:1.8;
+}
+
+.game-meta{
+display:flex;
+justify-content:center;
+margin-top:20px;
+}
+
+.meta-chip{
+padding:12px 18px;
+border-radius:999px;
+background:#fff;
+border:1px solid rgba(255,255,255,.8);
+color:#7b3454;
+font-weight:700;
+box-shadow:0 10px 25px rgba(93,32,61,.1);
+}
+
+.game-card{
+padding:30px;
+border-radius:30px;
+}
+
+.game-topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.back-link{
+display:inline-flex;
+align-items:center;
+padding:10px 18px;
+border-radius:50px;
+text-decoration:none;
+color:#7b3454;
+font-weight:700;
+font-size:14px;
+background:rgba(255,255,255,.6);
+border:1px solid rgba(255,255,255,.8);
+box-shadow:0 8px 20px rgba(93,32,61,.1);
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.back-link:hover{
+background:#ffd7e4;
+color:#5d203d;
+transform:translateY(-2px);
+}
+
+.letter-trigger{
+padding:12px 18px;
+border-radius:999px;
+background:linear-gradient(135deg,#ff78ad,#ff4f95);
+color:white;
+font-weight:800;
+box-shadow:0 12px 28px rgba(255,79,149,.25);
+border:none;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+
+.letter-trigger:hover{
+transform:translateY(-2px);
+background:linear-gradient(135deg,#ff6aa5,#ff3f88);
+}
+
+
+/* WHEEL */
+
+.wheel-area{
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:60px 0;
+}
+
+.pointer{
+position:absolute;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+font-size:42px;
+color:#ff4f95;
+z-index:30;
+}
+
+.wheel{
+width:360px;
+height:360px;
+border-radius:50%;
+position:relative;
+overflow:hidden;
+background:conic-gradient(#ff78ad 0deg 60deg,#ffd1e3 60deg 120deg,#ff9fc6 120deg 180deg,#ffe5f0 180deg 240deg,#ffb7d2 240deg 300deg,#ff5f98 300deg 360deg);
+box-shadow:0 25px 60px rgba(255,79,149,.3);
+transition:transform 3s cubic-bezier(.17,.67,.12,.99);
+}
+
+.wheel-center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:80px;
+height:80px;
+border-radius:50%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:35px;
+color:#ff4f95;
+z-index:10;
+box-shadow:0 10px 25px rgba(255,79,149,.25);
+}
+
+.wheel-segment{
+position:absolute;
+top:50%;
+left:50%;
+width:90px;
+height:30px;
+margin-left:-45px;
+margin-top:-15px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:15px;
+font-weight:900;
+color:#7e3558;
+transform-origin:center;
+z-index:5;
+}
+
+.wheel-segment:nth-of-type(1){
+transform:rotate(30deg) translateY(-135px) rotate(-30deg);
+}
+
+.wheel-segment:nth-of-type(2){
+transform:rotate(90deg) translateY(-135px) rotate(-90deg);
+}
+
+.wheel-segment:nth-of-type(3){
+transform:rotate(150deg) translateY(-135px) rotate(-150deg);
+}
+
+.wheel-segment:nth-of-type(4){
+transform:rotate(210deg) translateY(-135px) rotate(-210deg);
+}
+
+.wheel-segment:nth-of-type(5){
+transform:rotate(270deg) translateY(-135px) rotate(-270deg);
+}
+
+.wheel-segment:nth-of-type(6){
+transform:rotate(330deg) translateY(-135px) rotate(-330deg);
+}
+
+
+.game-message{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+margin:10px auto 0;
+padding:10px 18px;
+font-size:14px;
+
+width:fit-content;
+max-width:80%;
+
+background:rgba(255,255,255,.8);
+border-radius:999px;
+
+font-weight:800;
+font-size:16px;
+color:#7e3558;
+
+box-shadow:0 10px 25px rgba(255,79,149,.12);
+}
+
+#spinResult{
+color:#ff4f95;
+font-weight:900;
+}
+
+
+@media(max-width:600px){
+
+.wheel{
+width:280px;
+height:280px;
+}
+
+.wheel-segment{
+font-size:11px;
+}
+
+.wheel-segment:nth-of-type(1),
+.wheel-segment:nth-of-type(2),
+.wheel-segment:nth-of-type(3),
+.wheel-segment:nth-of-type(4),
+.wheel-segment:nth-of-type(5),
+.wheel-segment:nth-of-type(6){
+transform:scale(.8);
+}
+
+}
+.game-message{
+margin-top:20px;
+padding:18px 22px;
+text-align:left;
+border-radius:20px;
+background:rgba(255,255,255,.75);
+font-weight:700;
+color:#7e3558;
+line-height:1.8;
+min-height:120px;
+position:relative;
+}
+
+.game-message::after{
+content:"";
+display:inline-block;
+width:2px;
+height:18px;
+background:#ff4f95;
+margin-left:4px;
+vertical-align:middle;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+0%,50%{
+opacity:1;
+}
+
+51%,100%{
+opacity:0;
+}
+
+}
+.popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+visibility:hidden;
+transition:.35s;
+z-index:999;
+}
+
+.popup.show{
+opacity:1;
+visibility:visible;
+}
+
+.popup-card{
+width:min(90%,520px);
+background:white;
+border-radius:28px;
+padding:35px;
+text-align:center;
+box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.popup-card h2{
+margin:0 0 20px;
+font-size:32px;
+color:#ff4f95;
+font-family:'Cormorant Garamond',serif;
+}
+
+.popup-card p{
+min-height:180px;
+font-size:17px;
+line-height:1.9;
+color:#6b3453;
+text-align:left;
+}
+
+.popup-card p::after{
+content:"";
+display:inline-block;
+width:2px;
+height:18px;
+background:#ff4f95;
+margin-left:3px;
+animation:blink .8s infinite;
+}
+
+#closePopup{
+margin-top:25px;
+padding:12px 28px;
+border:none;
+border-radius:999px;
+background:#ff4f95;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+
+@keyframes blink{
+
+50%{
+opacity:0;
+}
+
+}

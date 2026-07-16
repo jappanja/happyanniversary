@@ -1,0 +1,245 @@
+:root{
+  --pink-1:#ff8fbd;
+  --pink-2:#ff5c9b;
+  --heading:#a54472;
+  --text:#5d3045;
+  --soft:#6d4a5b;
+  --shadow:0 18px 50px rgba(255,79,149,.18);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body.game-page-body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:'Manrope',sans-serif;
+  color:var(--text);
+  background:
+  radial-gradient(circle at top left,rgba(255,130,190,.35),transparent 25%),
+  radial-gradient(circle at bottom right,rgba(255,200,225,.7),transparent 25%),
+  linear-gradient(135deg,#fff8fc,#ffeaf4,#fff);
+}
+
+body.game-page-body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+  radial-gradient(circle at 20% 20%,rgba(255,255,255,.7),transparent 20%);
+}
+
+.flower-container{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+.flower{
+  position:absolute;
+  top:-50px;
+  animation:flowerFall linear forwards;
+  filter:drop-shadow(0 5px 8px rgba(255,90,150,.25));
+}
+
+.game-shell{
+  position:relative;
+  z-index:2;
+  width:min(1100px,92%);
+  margin:auto;
+  padding:40px 0 70px;
+}
+
+.glass-card{
+  background:rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);
+}
+
+.game-hero{
+  padding:40px;
+  border-radius:32px;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.eyebrow{
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#b05a7d;
+}
+
+.game-hero h1{
+  margin:15px 0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  color:var(--heading);
+}
+
+.game-subtitle{
+  max-width:650px;
+  margin:auto;
+  line-height:1.8;
+  color:var(--soft);
+}
+
+.game-meta{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.meta-chip{
+  padding:10px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(255,143,189,.22),rgba(255,92,155,.15));
+  font-weight:800;
+  color:#8b3c62;
+}
+
+.game-card{
+  padding:30px;
+  border-radius:32px;
+}
+
+.game-topbar{
+  margin-bottom:25px;
+}
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  padding:11px 20px;
+  border-radius:999px;
+  background:#fff;
+  color:#7b3454;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(255,79,149,.12);
+  transition:.3s;
+}
+
+.back-link:hover{
+  transform:translateY(-3px);
+  background:#ffe0ed;
+}
+
+.game-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.game-choice-card{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:210px;
+  padding:25px;
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,239,247,.95));
+  text-decoration:none;
+  color:var(--text);
+  box-shadow:0 15px 35px rgba(255,79,149,.15);
+  transition:.35s;
+}
+
+.game-choice-card::before{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  right:-40px;
+  bottom:-40px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,120,180,.25),transparent 70%);
+}
+
+.game-choice-card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 25px 50px rgba(255,79,149,.22);
+}
+
+.game-choice-emoji{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.game-choice-card strong{
+  font-size:1.2rem;
+  color:var(--heading);
+}
+
+.game-choice-card small{
+  margin-top:8px;
+  text-align:center;
+  color:var(--soft);
+  line-height:1.6;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@keyframes flowerFall{
+0%{
+transform:translateY(-50px) rotate(0deg);
+}
+50%{
+transform:translate(30px,50vh) rotate(180deg);
+}
+100%{
+transform:translate(-20px,110vh) rotate(360deg);
+}
+}
+
+@media(max-width:850px){
+
+.game-choice-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.game-shell{
+padding-top:25px;
+}
+
+.game-hero,
+.game-card{
+padding:22px;
+}
+
+.game-choice-grid{
+grid-template-columns:1fr;
+}
+
+.game-hero h1{
+font-size:2.8rem;
+}
+
+}

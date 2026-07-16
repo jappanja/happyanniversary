@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Lucky Guess</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="falling-effect.css">
+<link rel="stylesheet" href="game-guess.css">
+
+</head>
+
+<body class="page-body game-page-body">
+
+
+<div class="falling-container"></div>
+
+
+<audio id="gameAudio" loop preload="auto">
+    <source src="bahan/Merry Christmas.mp3" type="audio/mpeg">
+</audio>
+
+
+<main class="game-shell">
+
+<section class="game-hero glass-card">
+
+<p class="eyebrow">
+tiny lucky moment
+</p>
+
+<h1>
+Lucky Guess
+</h1>
+
+<p class="game-subtitle">
+Guess the hidden number between 1 and 20. Maybe luck has something beautiful waiting for you.
+</p>
+
+
+<div class="game-meta">
+
+<div class="meta-chip">
+Tries :
+<strong id="guessTries">0</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="game-card glass-card">
+
+<div class="game-topbar">
+
+<a href="game.html" class="back-link">
+← Choose Another Game
+</a>
+
+</div>
+
+
+<div class="guess-panel">
+
+<label class="guess-label">
+Enter a Number
+</label>
+
+
+<div class="guess-row">
+
+<input
+id="guessInput"
+class="guess-input"
+type="number"
+min="1"
+max="20"
+placeholder="1 - 20">
+
+
+<button
+id="guessButton"
+class="letter-trigger"
+type="button">
+Guess
+</button>
+
+</div>
+
+
+<div id="guessMessage" class="game-message">
+Take your best guess.
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<div id="endingOverlay" class="ending-overlay">
+
+<div class="ending-card">
+
+<h2>
+For You
+</h2>
+
+<p id="endingText"></p>
+
+
+<button
+id="continueBtn"
+class="letter-trigger"
+onclick="location.href='game.html'">
+
+Continue
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<script src="falling-effect.js"></script>
+<script src="game-guess.js"></script>
+
+
+</body>
+</html>
