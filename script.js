@@ -11,6 +11,20 @@ const bgAudio=document.getElementById("bgAudio");
 const codeDisplay=document.getElementById("codeDisplay");
 const passwordInput=document.getElementById("passwordInput");
 
+const gameLink = document.getElementById("gameLink");
+
+if(gameLink){
+    gameLink.addEventListener("click",()=>{
+
+        if(bgAudio){
+            sessionStorage.setItem("musicTime", bgAudio.currentTime);
+            bgAudio.pause();
+        }
+
+        sessionStorage.setItem("scrollPosition", window.scrollY);
+
+    });
+}
 
 /* AUDIO */
 
@@ -33,20 +47,18 @@ if(bgAudio){
 
 function playMusic(){
 
-  if(!bgAudio || !bgAudio.paused) return;
+    if(!bgAudio) return;
 
-  bgAudio.loop=true;
-  bgAudio.volume=.35;
+    bgAudio.loop=true;
+    bgAudio.volume=0.35;
 
-  const savedTime=sessionStorage.getItem("musicTime");
+    const savedTime=parseFloat(sessionStorage.getItem("musicTime"))||0;
 
-  if(savedTime){
-    bgAudio.currentTime=parseFloat(savedTime);
-  }
+    bgAudio.currentTime=savedTime;
 
-  bgAudio.play().catch(()=>{
-    console.log("audio menunggu interaksi");
-  });
+    bgAudio.play().catch(()=>{
+        console.log("audio menunggu interaksi");
+    });
 
 }
 
@@ -123,22 +135,16 @@ window.addEventListener("load",()=>{
     introScreen.classList.add("hidden");
     appScreen.classList.remove("hidden");
 
+    playMusic(); // WAJIB
+
     createFloatingHearts();
 
-    const savedScroll =
-    sessionStorage.getItem("scrollPosition");
+    const savedScroll=sessionStorage.getItem("scrollPosition");
 
     if(savedScroll){
-
       setTimeout(()=>{
-
-        window.scrollTo(
-          0,
-          parseInt(savedScroll)
-        );
-
+        window.scrollTo(0,parseInt(savedScroll));
       },300);
-
     }
 
   }
@@ -384,7 +390,7 @@ function openGiftModal(key){
   });
 
 
- giftModal.classList.remove("hidden");
+giftModal.classList.remove("hidden");
 giftModal.setAttribute("aria-hidden","false");
 
 // hanya kunci scroll di desktop
@@ -393,6 +399,8 @@ if (window.innerWidth > 768) {
 }
 
 }
+
+
 
 function closeGiftModal(){
 
@@ -635,7 +643,8 @@ setInterval(
 
 
 
-/* GALLERY VIEWER */
+/* GALLERY POPUP */
+
 document.querySelectorAll(".photo-card").forEach(card => {
 
     card.addEventListener("click", function(e){
@@ -657,6 +666,7 @@ document.querySelectorAll(".photo-card").forEach(card => {
     });
 
 });
+
 document.querySelectorAll(".photo-card").forEach(card => {
 
     card.addEventListener("click", function(){
