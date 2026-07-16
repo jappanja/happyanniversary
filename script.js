@@ -384,21 +384,24 @@ function openGiftModal(key){
   });
 
 
-  giftModal.classList.remove("hidden");
+ giftModal.classList.remove("hidden");
 giftModal.setAttribute("aria-hidden","false");
 
-document.body.style.overflow = "hidden";
+// hanya kunci scroll di desktop
+if (window.innerWidth > 768) {
+    document.body.style.overflow = "hidden";
+}
 
 }
 
-
-
 function closeGiftModal(){
 
-    giftModal.classList.add("hidden");
-    giftModal.setAttribute("aria-hidden","true");
+   giftModal.classList.add("hidden");
+giftModal.setAttribute("aria-hidden","true");
 
+if (window.innerWidth > 768) {
     document.body.style.overflow = "";
+}
 
 }
 
